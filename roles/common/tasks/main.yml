@@ -1,4 +1,6 @@
 ---
+- include: tasks/repo.yml
+
 - name: Disable firewall
   command: systemctl stop firewalld
 
