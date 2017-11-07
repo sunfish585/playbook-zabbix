@@ -1,0 +1,12 @@
+---
+- name:
+  hosts: vagrant-server
+  become: yes
+  user: vagrant
+
+  roles:
+    - common
+    - nginx
+    # - mariadb
+    # - php
+    # - wordpress

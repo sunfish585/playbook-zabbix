@@ -1,0 +1,21 @@
+---
+- name: Install remi repository
+  yum: name=http://rpms.famillecollet.com/enterprise/remi-release-7.rpm state=present
+
+- name: Install epel repository
+  yum: name=https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm state=present
+
+- name: Install php7.1
+  yum: name={{ item }} state=present enablerepo=remi,remi-php71
+  with_items:
+    - php
+    - php-devel
+    - php-mbstring
+    - php-mysqlnd
+    - php-mcrypt
+    - php-pear
+    - php-gd
+    - php-fpm
+    - php-pecl-xdebug
+    - php-opcache
+    - php-pecl-memcached

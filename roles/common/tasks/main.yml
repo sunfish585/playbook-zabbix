@@ -1,0 +1,6 @@
+---
+- name: Disable firewall
+  command: systemctl stop firewalld
+
+- name: Disable auto start firewall
+  command: systemctl disable firewalld
