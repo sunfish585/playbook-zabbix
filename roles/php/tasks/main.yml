@@ -2,14 +2,13 @@
 - name: Install php7.1
   yum: name={{ item }} state=present enablerepo=remi,remi-php71
   with_items:
-    - php
-    - php-devel
-    - php-mbstring
+    - php                  # PHP
+    - php-bcmath           # PHPで数式を使う用
+    - php-devel            # PHP開発用、ソースのコンパイル等する
+    - php-mbstring         # マルチバイト文字モジュール
+    - php-mysql
     - php-mysqlnd
-    - php-mcrypt
-    - php-pear
+    - php-ldap
     - php-gd
-    - php-fpm
-    - php-pecl-xdebug
-    - php-opcache
-    - php-pecl-memcached
+    - php-xml
+    - php-pecl-mysql
